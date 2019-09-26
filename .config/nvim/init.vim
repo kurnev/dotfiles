@@ -5,14 +5,18 @@ call minpac#init()
 call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 
 " Typescript
-call minpac#add('Shougo/vimproc.vim')
-call minpac#add('Quramy/tsuquyomi')
-call minpac#add('leafgarland/typescript-vim')
+" call minpac#add('Shougo/vimproc.vim')
+" call minpac#add('Quramy/tsuquyomi')
+" call minpac#add('leafgarland/typescript-vim')
+call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
 
 " vim status bar
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+set encoding=utf-8
 
 " Extra ? 
 call minpac#add('tpope/vim-projectionist')

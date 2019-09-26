@@ -3,7 +3,7 @@ set $mod Mod4
 set $alt Mod1
 set $coloract "#fdf6e3"
 set $colorin "#002b36"
-set $terminal urxvtc
+set $terminal gnome-terminal
 #set_from_resource $color15 i3wm.color15 "#010101"
 #set_from_resource $split i3wm.color10 "#bf9d65"
 #set_from_resource $coloru i3wm.color2 "#DDD4C5"
@@ -81,14 +81,14 @@ bindsym $mod+p focus parent
 
 ###### EXECUTE PROGRAMS ######
 
-bindsym $mod+Shift+f exec urxvt -name fexplorer -e ranger
+# bindsym $mod+Shift+f exec urxvt -name fexplorer -e ranger
 bindsym $mod+w       exec qutebrowser
-bindsym $mod+m       exec urxvt -name music -e ncmpcpp
+# bindsym $mod+m       exec urxvt -name music -e ncmpcpp
 bindsym $mod+$alt+t  exec wpg -m
 bindsym $alt+Tab     exec rofi -show window
 bindsym $alt+F4      kill
 bindsym $alt+F2      exec rofi -show run
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec gnome-terminal
 
 bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
