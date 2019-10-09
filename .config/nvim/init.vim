@@ -5,9 +5,7 @@ call minpac#init()
 call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 
 " Typescript
-" call minpac#add('Shougo/vimproc.vim')
-" call minpac#add('Quramy/tsuquyomi')
-" call minpac#add('leafgarland/typescript-vim')
+call minpac#add('leafgarland/typescript-vim')
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
 
 " vim status bar
@@ -61,6 +59,7 @@ set nostartofline       " Do not jump to first character with page commands.
 set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters.
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
+set nornu
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
@@ -69,6 +68,7 @@ endif
 
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
+
 
 " Relative numbering
 function! NumberToggle()
@@ -90,3 +90,16 @@ if has('nvim')
 endif    
 
 set undofile
+set hidden
+
+" Hotkeys
+
+" CoC Nvim
+set cmdheight=2
+set updatetime=300
+
+" Disable arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
