@@ -7,6 +7,11 @@ call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 " Typescript
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
+call minpac#add('prettier/vim-prettier', {'do': 'yarn install'})
+"command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+"vmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
+
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
