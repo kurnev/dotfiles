@@ -103,19 +103,9 @@ setxkbmap -option ctrl:nocaps
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 # Using neovim as 'preferred editor' for other apps
 export VISUAL=nvim
-alias kb-refresh="setxkbmap -layout us,ru -option grp:alt_shift_toggle"
-# VIM
 export VIMCONFIG="$HOME/.config/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
 export PATH="$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin"
 export FZF_DEFAULT_COMMAND="rg --files"
-alias typescript="tsc"
-#
-# SQL Configs
-#
-alias sql-local="mysql --user=root --password=qqq111 --host=localhost --protocol=tcp --database=meshok"
-alias ssh-staging-tunnel="ssh staging-docker -L 3307:mysql:3306 -N;" 
-alias sql-staging="mysql --user=root --password=qqq111 --host=127.0.0.1 --port=3307 --database=meshok"
-alias kibana-staging='ssh -NL 127.0.0.1:15601:kibana:5601 staging-docker'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias docker-status='docker ps -a --format "{{.Names}}: {{.Status}}: qwe" | grep unhealthy'
+
+source ~/.zsh_aliases

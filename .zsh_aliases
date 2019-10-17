@@ -1,0 +1,13 @@
+alias kb-refresh="setxkbmap -layout us,ru -option grp:alt_shift_toggle"
+alias typescript="tsc"
+#
+# SQL Configs
+#
+alias sql-local="mysql --user=root --password=qqq111 --host=localhost --protocol=tcp --database=meshok"
+alias ssh-staging-tunnel="ssh staging-docker -L 3307:mysql:3306 -N;" 
+alias sql-staging="mysql --user=root --password=qqq111 --host=127.0.0.1 --port=3307 --database=meshok"
+alias kibana-staging='ssh -NL 127.0.0.1:15601:kibana:5601 staging-docker'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Meshok
+alias docker-status='docker ps -a --format "{{.Names}}: {{.Status}}: qwe" | grep unhealthy'
+alias get-email='sql-local -B -N -e "SELECT e_mail FROM profile WHERE id = 940359"'
