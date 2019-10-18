@@ -11,3 +11,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Meshok
 alias docker-status='docker ps -a --format "{{.Names}}: {{.Status}}: qwe" | grep unhealthy'
 alias get-email='sql-local -B -N -e "SELECT e_mail FROM profile WHERE id = 940359"'
+alias vim='nvim'
+alias vi='nvim'
