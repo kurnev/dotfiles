@@ -1,11 +1,15 @@
+nnoremap <leader>p :Format<CR>
+
 " Coc Nvim
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 " file search
 nnoremap <C-p> :<C-u>FZF<CR>
+" code search
+nnoremap <C-g> :Rg<CR>
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -42,3 +46,4 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+

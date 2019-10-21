@@ -1,7 +1,6 @@
 source $HOME/.config/nvim/plugins/nerdtree.vimrc
+source $HOME/.config/nvim/plugins/cocnvim.vimrc
 
-" Color theme
-call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 " vim status bar
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
@@ -20,5 +19,12 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-repeat')
 call minpac#add('ryanoasis/vim-devicons')
-
+call minpac#add('scrooloose/nerdcommenter')
+" Color theme
+call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
+" FZF
+call minpac#add('junegunn/fzf.vim')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('idanarye/vim-merginal')

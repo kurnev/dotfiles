@@ -4,6 +4,8 @@ colorscheme solarized8
 
 " vim settings
 let mapleader="\<SPACE>"
+
+set keymap=russian-jcuken
 set showmatch           " Show matching brackets.
 set number              " Show the line numbers on the left side.
 set formatoptions+=o    " Continue comment marker in new lines.
@@ -30,7 +32,3 @@ set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set rnu
 set undofile
 set hidden
-
-" CoC Nvim
-set cmdheight=2
-set updatetime=300
