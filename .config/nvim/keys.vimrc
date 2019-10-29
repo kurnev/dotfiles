@@ -4,8 +4,7 @@ nnoremap <leader>p :Format<CR>
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
+map <C-n> :NERDTreeFind<CR>
 " file search
 nnoremap <C-p> :<C-u>FZF<CR>
 " code search
@@ -28,7 +27,7 @@ function! NumberToggle()
 endfunc
 
 " Toggle between normal and relative numbering.
-nnoremap <leader>r :call NumberToggle()<cr>
+"nnoremap <leader>r :call NumberToggle()<cr>
 "
 " Escape in terminal vim to exit insert mode
 if has('nvim')
