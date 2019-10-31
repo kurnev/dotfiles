@@ -1,4 +1,4 @@
-" color theme
+set encoding=utf-8
 set background=light
 colorscheme solarized8
 
@@ -31,4 +31,3 @@ set smartcase           " ... unless the query has capital letters.
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set rnu
 set undofile
-set hidden
