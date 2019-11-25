@@ -1,10 +1,4 @@
-nnoremap <leader>p :Format<CR>
-
-" Coc Nvim
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" NERDTree
-map <C-n> :NERDTreeFind<CR>
+"
 " file search
 nnoremap <C-p> :<C-u>FZF<CR>
 " code search
@@ -15,25 +9,14 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
-"
-" Relative numbering
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-    set number
-  else
-    set rnu
-  endif
-endfunc
 
-" Toggle between normal and relative numbering.
-"nnoremap <leader>r :call NumberToggle()<cr>
 "
 " Escape in terminal vim to exit insert mode
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-v><Esc> <Esc>
 endif    
+
 " Disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>

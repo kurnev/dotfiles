@@ -1,5 +1,7 @@
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
 
+let g:coc_global_extensions = 'coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-highlight coc-snippets coc-markdownlint'
+
 set hidden
 " Some servers have issues with backup files, see #649
 set nobackup
@@ -16,6 +18,8 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+nnoremap <leader>p :Format<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -65,8 +69,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>r <Plug>(coc-rename)
-
-    " Remap for format selected region
+"
+" Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
