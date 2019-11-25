@@ -17,6 +17,9 @@ if has('nvim')
     tnoremap <C-v><Esc> <Esc>
 endif    
 
+"yank to register 
+vmap <Leader>y "+y<CR>
+
 " Disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
