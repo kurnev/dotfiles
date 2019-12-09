@@ -1,0 +1,19 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "typescript",
+    "javascript",
+    "json",
+    "css",
+    "Markdown"
+ ],
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {},
+    "prettyhtml": {
+      "printWidth": 80,
+      "singleQuote": false
+    }
+  },
+  "eslint.autoFixOnSave": true
+}
