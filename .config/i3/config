@@ -191,3 +191,4 @@ bindsym $mod+d mode "display"
 
 ###### STARTUP ######
 exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id nitrogen --restore

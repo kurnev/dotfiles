@@ -15,5 +15,5 @@
       "singleQuote": false
     }
   },
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": false
 }
