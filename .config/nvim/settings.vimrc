@@ -1,5 +1,5 @@
 set encoding=utf-8
-set background=light
+set background=dark
 colorscheme solarized8
 
 " vim settings
