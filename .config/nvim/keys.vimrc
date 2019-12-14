@@ -20,6 +20,8 @@ endif
 "yank to register 
 vmap <Leader>y "+y<CR>
 
+nmap <Leader>w :w<CR>
+
 " Disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
