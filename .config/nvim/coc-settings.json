@@ -6,7 +6,7 @@
     "json",
     "css",
     "Markdown"
- ],
+  ],
   "vetur.format.defaultFormatter.html": "prettyhtml",
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {},
@@ -15,5 +15,15 @@
       "singleQuote": false
     }
   },
-  "eslint.autoFixOnSave": false
+  "eslint.autoFixOnSave": false,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
 }

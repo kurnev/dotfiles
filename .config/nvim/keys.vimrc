@@ -1,8 +1,9 @@
 "
 " file search
-nnoremap <C-p> :<C-u>FZF<CR>
+noremap <C-p> :Leaderf file<CR>
 " code search
-nnoremap <C-g> :Rg<CR>
+noremap <C-g> :Leaderf rg<CR>
+
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
