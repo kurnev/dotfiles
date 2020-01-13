@@ -1,6 +1,6 @@
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
 
-let g:coc_global_extensions = 'coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-highlight coc-snippets coc-markdownlint coc-eslint'
+let g:coc_global_extensions = 'coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-highlight coc-snippets coc-markdownlint coc-eslint coc-go'
 
 set hidden
 " Some servers have issues with backup files, see #649

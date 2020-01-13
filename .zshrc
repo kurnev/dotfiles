@@ -16,4 +16,7 @@ export PATH="$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin"
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 
 source ~/.zsh_aliases
-# source <(kubectl completion zsh)
+source <(kubectl completion zsh)
+PATH=$PATH:$HOME/go/bin
+
+export GOPRIVATE="gitlab.com/meshokteam"
