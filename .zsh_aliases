@@ -4,6 +4,7 @@ alias typescript="tsc"
 # SQL Configs
 #
 alias sql-local="mysql --user=root --password=qqq111 --host=localhost --protocol=tcp --database=meshok"
+alias postgre-local="psql --user=admin --host=localhost --dbname=admin --port=5432"
 alias ssh-staging-tunnel="ssh staging-docker -L 3307:mysql:3306 -N;" 
 alias sql-staging="mysql --user=root --password=qqq111 --host=127.0.0.1 --port=3307 --database=meshok"
 alias kibana-staging='ssh -NL 127.0.0.1:15601:kibana:5601 staging-docker'
@@ -13,3 +14,4 @@ alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias get-email='sql-local -B -N -e "SELECT e_mail FROM profile WHERE id = $1"'
 alias vim='nvim'
 alias vi='nvim'
+
