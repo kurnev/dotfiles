@@ -1,7 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "html",
-    "typescript",
     "javascript",
     "json",
     "css",
@@ -15,7 +14,7 @@
       "singleQuote": false
     }
   },
-  "eslint.autoFixOnSave": false,
+  "eslint.autoFixOnSave": true,
   "languageserver": {
     "golang": {
       "command": "gopls",

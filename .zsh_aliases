@@ -14,4 +14,5 @@ alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias get-email='sql-local -B -N -e "SELECT e_mail FROM profile WHERE id = $1"'
 alias vim='nvim'
 alias vi='nvim'
+alias dcl='docker-compose logs -f'
 
