@@ -186,7 +186,7 @@ bindsym $mod+d mode "display"
 # for_window [class = "Wpg"] floating enable
 # for_window [instance = "dropdown"] move scratchpad
 # for_window [instance = "dropdown"] floating enable
-# for_window [instance = "music"] floating enable
+for_window [class = "gnome-terminal"] floating enable
 
 
 ###### STARTUP ######

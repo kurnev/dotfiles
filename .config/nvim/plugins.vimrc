@@ -12,10 +12,9 @@ call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('scrooloose/nerdcommenter')
 call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
+
 call minpac#add('junegunn/fzf.vim')
+
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('mhinz/vim-startify')
-call minpac#add('Yggdroot/LeaderF')
 
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
