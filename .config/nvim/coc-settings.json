@@ -1,7 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "html",
-    "typescript",
     "javascript",
     "json",
     "css",

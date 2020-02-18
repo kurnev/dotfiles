@@ -11,6 +11,8 @@ endif
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
 
+noremap <Leader>p :Format<CR>
+
 "
 " Escape in terminal vim to exit insert mode
 if has('nvim')
