@@ -13,6 +13,11 @@ nmap <Leader>s :%s//g<Left><Left>
 
 noremap <Leader>p :Format<CR>
 
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+
 "
 " Escape in terminal vim to exit insert mode
 if has('nvim')
