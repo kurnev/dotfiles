@@ -3,7 +3,7 @@ set $mod Mod4
 set $alt Mod1
 set $coloract "#fdf6e3"
 set $colorin "#002b36"
-set $terminal gnome-terminal
+set $terminal urxvt
 #set_from_resource $color15 i3wm.color15 "#010101"
 #set_from_resource $split i3wm.color10 "#bf9d65"
 #set_from_resource $coloru i3wm.color2 "#DDD4C5"
@@ -88,13 +88,13 @@ bindsym $mod+$alt+t  exec wpg -m
 bindsym $alt+Tab     exec rofi -show window
 bindsym $alt+F4      kill
 bindsym $alt+F2      exec rofi -show run
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt
 
 bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
 
 # scratchpad terminal
-bindsym $mod+u [instance = "dropdown"] scratchpad show
+# bindsym $mod+u [instance = "dropdown"] scratchpad show
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -186,7 +186,7 @@ bindsym $mod+d mode "display"
 # for_window [class = "Wpg"] floating enable
 # for_window [instance = "dropdown"] move scratchpad
 # for_window [instance = "dropdown"] floating enable
-for_window [class = "gnome-terminal"] floating enable
+# for_window [class = "gnome-terminal"] floating enable
 
 
 ###### STARTUP ######
