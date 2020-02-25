@@ -16,7 +16,7 @@ success = #A3BE8C
 function = #B48EAD
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 28
 ;offset-x = 5%
