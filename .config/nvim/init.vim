@@ -17,7 +17,7 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('scrooloose/nerdcommenter')
-call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
+" call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('mhinz/vim-startify')
@@ -26,18 +26,53 @@ call minpac#add('mhinz/vim-startify')
 
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
-let g:airline_symbols_ascii = 1
+" let g:airline_symbols_ascii = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_b = ''
-let g:airline_section_x = ''
-let g:airline_section_y = ''
+" let g:airline_section_b = ''
+" let g:airline_section_x = ''
+" let g:airline_section_y = ''
 
 " Nord Theme Colors
 " https://www.nordtheme.com/
 
 call minpac#add('arcticicestudio/nord-vim')
 colorscheme nord
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
 
 " Vim settings
 

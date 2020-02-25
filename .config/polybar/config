@@ -46,7 +46,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = pulseaudio xkeyboard wlan eth date powermenu
+modules-right = pulseaudio xkeyboard wlan eth date
 
 tray-position = right
 tray-padding = 1
@@ -187,7 +187,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp61s0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
