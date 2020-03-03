@@ -162,3 +162,5 @@ alias vpn_magnit="sudo openconnect -u remote_xpertnetz2 https://gate.tander.ru"
 alias dcl="docker-compose logs -f"
 
 kb-refresh
+source <(kubectl completion bash)
+xrdb ~/.Xresources
