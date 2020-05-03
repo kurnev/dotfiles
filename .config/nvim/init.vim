@@ -17,16 +17,23 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('scrooloose/nerdcommenter')
-" call minpac#add('lifepillar/vim-solarized8', { 'type' : 'opt'})
 call minpac#add('junegunn/fzf.vim', {'do': { -> fzf#install() }})
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('mhinz/vim-startify')
-call minpac#add('tpope/vim-dadbod')
+"call minpac#add('mhinz/vim-startify')
+"call minpac#add('tpope/vim-dadbod')
+call minpac#add('vimwiki/vimwiki')
+"call minpac#add('voldikss/vim-translator')
+"call minpac#add('paulkass/jira-vim')
+
+
+let g:jiraVimDomainName = "meshok"
+let g:jiraVimEmail = "kurnev.e@gmail.com"
+"let g:jiraVimToken = ""
 
 " Airline 
 
 call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
+"call minpac#add('vim-airline/vim-airline-themes')
 " let g:airline_symbols_ascii = 1
 
 if !exists('g:airline_symbols')
@@ -60,8 +67,13 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+
+
+
 let g:airline_section_b = ''
 let g:airline_section_x = ''
+
 " let g:airline_section_y = ''
 
 " Nord Theme Colors
@@ -83,15 +95,20 @@ set encoding=utf-8
 
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release'})
 
-let g:coc_global_extensions = 'coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-highlight coc-snippets coc-markdownlint coc-eslint coc-go'
+" let g:coc_global_extensions = 'coc-json coc-tsserver coc-prettier coc-html coc-css coc-vetur coc-yaml coc-highlight coc-snippets coc-markdownlint coc-eslint coc-go coc-todolist'
 
 set hidden
+" For vim wiki
+set nocompatible
+filetype plugin on
+syntax on
+
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+set cmdheight=3
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -106,16 +123,17 @@ nnoremap <leader>p :Format<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -151,11 +169,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>r <Plug>(coc-rename)
+nmap <Leader>r <Plug>(coc-rename)
 "
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <Leader>f  <Plug>(coc-format-selected)
+nmap <Leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -340,6 +358,11 @@ endif
 vmap <Leader>y "+y<CR>
 
 nmap <Leader>w :w<CR>
+nmap <Leader>t :CocRestart<CR>
+nmap <Leader>x :CocCommand rls.run<CR>
+nmap <Leader>l :edit $MYVIMRC<CR>
+nmap <Leader>; :so %<CR>
+nmap <Leader>z :echo expand('%:p')<CR>
 
 " Disable arrows
 noremap <Up> <NOP>
@@ -352,4 +375,6 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+
+
 

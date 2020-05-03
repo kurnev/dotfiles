@@ -1,20 +1,22 @@
-# i3 config file (v4) Please see https://i3wm.org/docs/userguide.html for a complete reference!  
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!  
 set $mod Mod4
 set $alt Mod1
-#set $coloract "#fdf6e3"
-#set $colorin "#002b36"
+set $coloract "#fdf6e3"
+set $colorin "#002b36"
 set $terminal urxvt
-#set_from_resource $color15 i3wm.color15 "#010101"
-#set_from_resource $split i3wm.color10 "#bf9d65"
-#set_from_resource $coloru i3wm.color2 "#DDD4C5"
-#set_from_resource $color0 i3wm.color0 "#eeeae4"
-#set_from_resource $color8 i3wm.color8 "#d4d0cb"
+set_from_resource $color15 i3wm.color15 "#010101"
+set_from_resource $split i3wm.color10 "#bf9d65"
+set_from_resource $coloru i3wm.color2 "#DDD4C5"
+set_from_resource $color0 i3wm.color0 "#eeeae4"
+set_from_resource $color8 i3wm.color8 "#d4d0cb"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 12
+
 font pango:JetBrainsMono, monospace 12
-gaps outer 6
+gaps outer 4
 gaps inner 6
 new_window pixel 2
 
@@ -82,13 +84,13 @@ bindsym $mod+p focus parent
 
 ###### EXECUTE PROGRAMS ######
 
-bindsym $mod+Shift+f exec urxvt -name fexplorer -e ranger
 # bindsym $mod+m       exec urxvt -name music -e ncmpcpp
-bindsym $mod+$alt+t  exec wpg -m
 bindsym $alt+Tab     exec rofi -show window
 bindsym $alt+F4      kill
 bindsym $alt+F2      exec rofi -show run
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name floatingurxvt
+bindsym $mod+Shift+f exec urxvt -name fexplorer -e ranger
 
 bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
@@ -98,6 +100,7 @@ bindsym --release Shift+Print exec scrot -s
 
 # switch to workspace
 bindsym $mod+1 workspace 1
+bindsym $mod+w workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -154,16 +157,6 @@ mode "resize" {
 }
 
 mode "display" {
-
-        # toggle thinkpad modes
-        bindsym s exec dock-single
-        bindsym d exec dock-dual
-        bindsym t exec thinkpad
-
-        # toggle compton modes
-        bindsym f exec "killall compton; compton -b --inactive-dim 0.2"
-        bindsym n exec "killall compton; compton -b"
-
         bindsym h move workspace to output left
         bindsym l move workspace to output right
 
@@ -175,20 +168,29 @@ bindsym $mod+r mode "resize"
 bindsym $mod+d mode "display"
 
 ##### WINDOWS ######
+assign [class = "qutebrowser"] 2
+assign [class = "chromium"] 2
+assign [title="urxvtdev"] 1
+assign [class = "telegram-desktop"] 4
+assign [class = "discord"] 4
 
-# assign [class = "Firefox"] 1
-# assign [class = "qutebrowser"] 1
-# assign [class = "Google-chrome"] 1
-# assign [class = "DBeaver"] 3
-# assign [class = "zoom"] 9
-# assign [instance = "music"] 10
+assign [class = "steam"] 5
 
-# for_window [class = "Wpg"] floating enable
-# for_window [instance = "dropdown"] move scratchpad
-# for_window [instance = "dropdown"] floating enable
-# for_window [class = "gnome-terminal"] floating enable
+for_window [title = "floatingurxvt"] floating enable
+for_window [title = "fexplorer"] floating enable
+
+bindsym $mod+q [class="qutebrowser"] focus
 
 
 ###### STARTUP ######
-exec --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.screenlayout/mon.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+###### WORKSPACES ######
+
+# main workspace with dev
+workspace 1 output DisplayPort-0
+workspace 2 output HDMI-A-0
+
+# Pressing same window simply 
+workspace_auto_back_and_forth yes

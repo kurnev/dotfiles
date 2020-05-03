@@ -160,7 +160,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias vpn_magnit="sudo openconnect -u remote_xpertnetz2 https://gate.tander.ru"
 alias dcl="docker-compose logs -f"
+alias drm="docker ps -a --format={{.ID}} | xargs docker stop | xargs docker rm"
+alias grimdawn="steam steam://rungameid/219990"
 
 kb-refresh
 source <(kubectl completion bash)
-xrdb ~/.Xresources
+
