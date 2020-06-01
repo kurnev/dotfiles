@@ -6,7 +6,7 @@ killall -q polybar
 # polybar-msg cmd quit
 
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m polybar --reload example &
+    MONITOR=$m polybar --reload example >>/tmp/polybar.log 2>&1 &
 done
 
 # Launch bar1 and bar2

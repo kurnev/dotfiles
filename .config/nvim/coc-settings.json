@@ -8,7 +8,7 @@
     "vue",
     "typescript",
     "rust"
- ],
+  ],
   "vetur.format.defaultFormatter.html": "prettyhtml",
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {},
@@ -19,20 +19,14 @@
   },
   "eslint.autoFixOnSave": false,
   "eslint.enable": true,
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "filetypes": [
-        "go"
-      ],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
       "initializationOptions": {
         "usePlaceholders": true
       }

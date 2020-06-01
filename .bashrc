@@ -147,9 +147,6 @@ export MYVIMRC="$VIMCONFIG/init.vim"
 export FZF_DEFAULT_COMMAND="rg --files"
 export GOPRIVATE="gitlab.com/meshokteam"
 
-export PATH="$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$(yarn global bin):$PATH"
 
 # Aliases 
 alias kb-refresh="setxkbmap -layout us,ru -option grp:alt_shift_toggle setxkbmap -option ctrl:nocaps"
