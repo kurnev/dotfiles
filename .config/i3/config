@@ -16,8 +16,8 @@ set_from_resource $color8 i3wm.color8 "#d4d0cb"
 #font pango:monospace 12
 
 font pango:JetBrainsMono, monospace 12
-gaps outer 3
-gaps inner 2
+gaps outer 10
+gaps inner 5
 new_window pixel 2
 
 ######### COLORS ##########
@@ -48,11 +48,11 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal and vertical orientation
-bindsym $mod+s split v
+# bindsym $mod+s split v
 bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
-bindsym $mod+c fullscreen toggle
+bindsym $mod+n fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+t layout tabbed
@@ -74,9 +74,9 @@ bindsym $mod+p focus parent
 # bindsym $mod+m       exec urxvt -name music -e ncmpcpp
 bindsym $alt+Tab     exec rofi -show window
 bindsym $alt+F4      kill
-bindsym $mod+d      exec rofi -show run
-# for running scripts
+bindsym $mod+q      exec rofi -show run
 
+# for running scripts
 bindsym $mod+Shift+q exec --no-startup-id "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 
 bindsym $mod+Return exec urxvt
@@ -91,7 +91,6 @@ bindsym --release Shift+Print exec scrot -s
 
 # switch to workspace
 bindsym $mod+1 workspace 1
-bindsym $mod+w workspace 2
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -101,7 +100,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 # bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+e workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -161,7 +159,7 @@ bindsym $mod+Shift+d mode "display"
 
 ##### WINDOWS ######
 assign [class = "qutebrowser"] 1
-assign [class = "chromium"] 1
+assign [class = "Chromium"] 3
 assign [class = "TelegramDesktop"] 4
 assign [class = "discord"] 4
 assign [class = "Steam"] 5
@@ -175,17 +173,32 @@ for_window [class = "Pcmanfm"] floating enable
 for_window [class = "vlc"] floating enable
 for_window [class = "radeon-profile"] floating enable
 
-bindsym $mod+q [class="qutebrowser"] focus
+bindsym $mod+a [class="qutebrowser"] focus
+bindsym $mod+s [instance="dev"] focus
+bindsym $mod+d [class="Chromium"] focus
+
+bindsym $mod+x [class="discord"] focus
+
 
 ###### STARTUP ######
 exec_always --no-startup-id ~/.screenlayout/mon.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+exec --no-startup-id discord
+exec --no-startup-id qutebrowser
+exec --no-startup-id chromium
+exec --no-startup-id urxvt -name dev
+exec --no-startup-id nitrogen --restore
+
 ###### WORKSPACES ######
 
 # main workspace with dev
 workspace 1 output HDMI-A-0
+
 workspace 2 output DisplayPort-0
+workspace 3 output DisplayPort-0
+workspace 4 output DisplayPort-0
+workspace 5 output DisplayPort-0
 workspace 6 output DisplayPort-0
 
 # Pressing same window simply 

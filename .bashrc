@@ -147,7 +147,6 @@ export MYVIMRC="$VIMCONFIG/init.vim"
 export FZF_DEFAULT_COMMAND="rg --files"
 export GOPRIVATE="gitlab.com/meshokteam"
 
-
 # Aliases 
 alias kb-refresh="setxkbmap -layout us,ru -option grp:alt_shift_toggle setxkbmap -option ctrl:nocaps"
 alias typescript="tsc"
@@ -155,11 +154,16 @@ alias sql-local="mysql --user=root --password=qqq111 --host=localhost --protocol
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='nvim'
 alias vi='nvim'
-alias vpn_magnit="sudo openconnect -u remote_xpertnetz2 https://gate.tander.ru"
 alias dcl="docker-compose logs -f"
 alias drm="docker ps -a --format={{.ID}} | xargs docker stop | xargs docker rm"
-alias grimdawn="steam steam://rungameid/219990"
+
+export PATH="$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$(yarn global bin):$PATH"
 
 kb-refresh
 source <(kubectl completion bash)
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
