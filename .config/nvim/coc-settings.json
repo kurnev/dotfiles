@@ -19,7 +19,6 @@
   },
   "eslint.autoFixOnSave": false,
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "vue"],
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
   "languageserver": {
