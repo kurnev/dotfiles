@@ -1,34 +1,17 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
+    "layer": "bottom", // Waybar at top layer
+    "position": "bottom", // Waybar at the bottom of your screen
     "height": 24, // Waybar height
     // "width": 1366, // Waybar width
-    // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "tray", "clock", "custom/keyboard-layout"],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1:web": "1",
-            "2:code": "2",
-            "3:term": "3",
-            "4:work": "4",
-            "5:music": "5",
-            "6:docs": "6",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
+    "modules-right": ["cpu", "memory", "tray", "clock", "pulseaudio", "custom/keyboard-layout"],
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 12
     },
     "clock": {
         "format-alt": "{:%Y-%m-%d}"
@@ -62,7 +45,7 @@
         "on-click": "pavucontrol"
     },
     "custom/keyboard-layout": {
-      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1204:1296:HID_Keyboard_HID_Keyboard'",
-      "format": "  {}"
+      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1241:6168:USB_Keyboard'",
+      "format": "  {} "
     }
 }

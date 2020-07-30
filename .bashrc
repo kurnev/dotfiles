@@ -146,6 +146,7 @@ export VIMDATA="$HOME/.local/share/nvim"
 export MYVIMRC="$VIMCONFIG/init.vim"
 export FZF_DEFAULT_COMMAND="rg --files"
 export GOPRIVATE="gitlab.com/meshokteam"
+export GOPATH="$HOME/go"
 
 # Aliases 
 alias kb-refresh="setxkbmap -layout us,ru -option grp:alt_shift_toggle setxkbmap -option ctrl:nocaps"
@@ -164,7 +165,6 @@ export PATH="$(yarn global bin):$PATH"
 
 kb-refresh
 source <(kubectl completion bash)
-
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

@@ -89,6 +89,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+imap jj <Esc>
 
   " Use K to show documentation in preview window
   nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -291,6 +292,7 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
   endif    
 
   "yank to register 
+  xnoremap "+y y:call system("wl-copy", @")<cr>
   vmap <Leader>y "+y<CR>
   nmap <Leader>w :wa<CR>
   nmap <Leader>t :CocRestart<CR>
@@ -313,6 +315,17 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
 :nmap <Leader>e :CocCommand explorer<CR>
 
 command! Cvim :e $MYVIMRC
+command! Csway :e $HOME/.config/sway/config
+command! WasmBuild :!wasm-pack build
+
+function FileNameToRegister() 
+      :let @" = expand("%")
+      :call system("wl-copy", @")
+endfunction
+
+command! GetF execute FileNameToRegister()
+
+nmap <Leader>x :WasmBuild<CR>
 
 " When using `dd` in the quickfix list, remove the item from the quickfix list.
 " https://stackoverflow.com/questions/42905008/quickfix-list-how-to-add-and-remove-entries
