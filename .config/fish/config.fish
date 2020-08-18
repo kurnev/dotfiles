@@ -10,5 +10,5 @@ alias vi='nvim'
 alias dcl="docker-compose logs -f"
 alias drm="docker ps -a --format={{.ID}} | xargs docker stop | xargs docker rm"
 
-echo 'Set SELinux to Permissive to allow mounting for docker-compose containers without Z: flag https://github.com/docker/for-linux/issues/955 sudo setenforce permissive'
+# echo 'Set SELinux to Permissive to allow mounting for docker-compose containers without Z: flag https://github.com/docker/for-linux/issues/955 sudo setenforce permissive'
 starship init fish | source

@@ -78,8 +78,8 @@ bindsym Shift+Print exec swayshot region
 
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
+bindsym $mod+a workspace 1
+bindsym $mod+s workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
@@ -136,17 +136,17 @@ mode "display" {
 ##### WINDOWS ######
 #assign [class = "qutebrowser"] 1
 
-for_window [instance = "fexplorer"] floating enable
-for_window [title = "floatingurxvt"] floating enable
-for_window [class = "Pavucontrol"] floating enable
-for_window [class = "vlc"] floating enable
-for_window [class = "radeon-pwofile"] floating enable
-for_window [class = "radeon-pwofile"] floating enable
+# for_window [instance = "fexplorer"] floating enable
+# for_window [title = "floatingurxvt"] floating enable
+# for_window [class = "Pavucontrol"] floating enable
+# for_window [class = "vlc"] floating enable
+# for_window [class = "radeon-pwofile"] floating enable
+# for_window [class = "radeon-pwofile"] floating enable
 
-bindsym $mod+a [class="qutebrowser"] focus
-bindsym $mod+s [instance="dev"] focus
-bindsym $mod+d [class="Chromium"] focus
-bindsym $mod+x [class="discord"] focus
+# bindsym $mod+a [class="qutebrowser"] focus
+# bindsym $mod+s [instance="dev"] focus
+# bindsym $mod+d [class="Chromium"] focus
+# bindsym $mod+x [class="discord"] focus
 
 focus_follows_mouse no
 mouse_warping none

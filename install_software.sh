@@ -11,7 +11,7 @@ git config --global user.name "Kurnev Egor"
 git config --global user.email kurnev.e@gmail.com
 
 # Software from official\RPM repos
-sudo dnf install sway neovim nodejs starship wl-clipboard wofi waybar fish fzf ripgrep golang jq util-linux-user
+sudo dnf install sway neovim nodejs starship wl-clipboard wofi waybar fish fzf ripgrep golang jq util-linux-user glances chromium slurp mariadb swaylock
 
 # Fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
@@ -30,10 +30,6 @@ dnf install alacritty
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo dnf install yarn
 
-# Enpass
-cd /etc/yum.repos.d/
-sudo wget https://yum.enpass.io/enpass-yum.repo
-sudo dnf install enpass
 
 # Vim
 nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
@@ -76,5 +72,13 @@ sudo usermod -aG docker $USER
 
 docker login harbor.infra.meshok.team
 
+# Swayshot
+
+cp ~/swayshot.sh /usr/bin
+
 # Color theme  ?
 
+# Enpass
+cd /etc/yum.repos.d/
+sudo wget https://yum.enpass.io/enpass-yum.repo
+sudo dnf install enpass
