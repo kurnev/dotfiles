@@ -5,22 +5,15 @@
     "json",
     "css",
     "Markdown",
-    "vue",
     "typescript",
+    "vue",
     "rust"
   ],
-  "vetur.format.defaultFormatter.html": "prettyhtml",
-  "vetur.format.defaultFormatterOptions": {
-    "js-beautify-html": {},
-    "prettyhtml": {
-      "printWidth": 80,
-      "singleQuote": false
-    }
-  },
-  "eslint.autoFixOnSave": false,
+  "eslint.autoFix": false,
   "eslint.enable": true,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
+  "prettier.disableLanguages": [],
   "languageserver": {
     "golang": {
       "command": "gopls",

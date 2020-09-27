@@ -45,8 +45,8 @@
         "on-click": "pavucontrol"
     },
     "custom/keyboard-layout": {
-//      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1241:6168:USB_Keyboard' '1:1:AT_Translated_Set_2_keyboard'",
-      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
+      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1241:6168:USB_Keyboard'",
+//      "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
       "format": "  {} "
     }
 }
