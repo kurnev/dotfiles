@@ -1,0 +1,197 @@
+# Nvidia prime stuff https://www.reddit.com/r/i3wm/comments/iisy2e/black_screen_after_installing_nvidia_driver/
+exec xrandr --setprovideroutputsource modesetting NVIDIA-0 
+exec xrandr --auto
+exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 1
+
+set $mod Mod4
+set $alt Mod1
+set $coloract "#fdf6e3"
+set $colorin "#002b36"
+set $terminal alacritty
+set_from_resource $color15 i3wm.color15 "#010101"
+set_from_resource $split i3wm.color10 "#bf9d65"
+set_from_resource $coloru i3wm.color2 "#DDD4C5"
+set_from_resource $color0 i3wm.color0 "#eeeae4"
+set_from_resource $color8 i3wm.color8 "#d4d0cb"
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 12
+
+font pango:JetBrainsMono, monospace 12
+gaps outer 14
+gaps inner 10
+new_window pixel 2
+
+######### COLORS ##########
+#
+# class            )     border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $colorin
+client.unfocused        $colorin  $colorin  $color15 $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
+
+
+###### KEYBINDINGS #######
+
+floating_modifier $mod
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal and vertical orientation
+# bindsym $mod+s split v
+bindsym $mod+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $mod+n fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+s layout stacked
+bindsym $mod+Shift+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+o sticky toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+p focus parent
+
+###### EXECUTE PROGRAMS ######
+
+# bindsym $mod+m       exec urxvt -name music -e ncmpcpp
+bindsym $alt+Tab     exec rofi -show window
+bindsym $alt+F4      kill
+bindsym $mod+q      exec rofi -show run
+
+# for running scripts
+bindsym $mod+Shift+q exec --no-startup-id "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
+bindsym $mod+Return exec alacritty
+
+bindsym --release Print exec scrot
+bindsym --release Shift+Print exec scrot -s
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+# bindsym $mod+9 workspace 9
+# bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+v restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+shift+9 exec betterlockscreen -l dim
+
+mode "resize" {
+        # resize windows
+        bindsym l resize shrink width 30 px or 10 ppt
+        bindsym j resize grow height 30 px or 10 ppt
+        bindsym k resize shrink height 30 px or 10 ppt
+        bindsym h resize grow width 30 px or 10 ppt
+
+        # resize gaps
+        bindsym minus       gaps outer current plus 10
+        bindsym plus        gaps outer current minus 10
+        bindsym Shift+minus g-ps inner current plus 10
+        bindsym Shift+plus  gaps inner current minus 10
+
+        # move windows
+        bindsym Shift+l move right 30
+        bindsym Shift+j move down 30
+        bindsym Shift+k move up 30
+        bindsym Shift+h move left 30
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "display" {
+        bindsym h move workspace to output left
+        bindsym l move workspace to output right
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+r mode "resize"
+bindsym $mod+Shift+d mode "display"
+
+##### WINDOWS ######
+assign [class = "firefox"] 2
+assign [class = "TelegramDesktop"] 4
+
+for_window [title = "Steam"] floating enable
+for_window [class = "Pavucontrol"] floating enable
+for_window [class = "Pcmanfm"] floating enable
+for_window [class = "vlc"] floating enable
+for_window [class = "Nvidia-settings"] floating enable
+
+
+# bindsym $mod+x [class="discord"] focus
+
+###### STARTUP ######
+# exec_always --no-startup-id ~/.screenlayout/mon.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always feh --bg-fill ~/Pictures/pexels-tom-swinnen-946344.jpg
+exec --no-startup-id betterlockscreen -w dim
+
+# Scrolling for mouse
+exec xinput set-prop 14 'libinput Natural Scrolling Enabled' 0
+
+# exec --no-startup-id discord
+# exec --no-startup-id qutebrowser
+# exec --no-startup-id nitrogen --restore
+
+###### WORKSPACES ######
+
+# main workspace with dev
+# workspace 1 output DP-2
+# workspace 2 output DP-2
+# workspace 3 output DP-2
+# workspace 4 output DP-2
+# workspace 5 output DP-2
+# workspace 3 output DisplayPort-0
+# workspace 4 output DisplayPort-0
+# workspace 5 output DisplayPort-0
+# workspace 6 output DisplayPort-0
+
+# Pressing same window simply 
+# workspace_auto_back_and_forth yes
+
+focus_follows_mouse no
+mouse_warping none
