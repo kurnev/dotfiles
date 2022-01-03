@@ -1,7 +1,7 @@
 # Nvidia prime stuff https://www.reddit.com/r/i3wm/comments/iisy2e/black_screen_after_installing_nvidia_driver/
 exec xrandr --setprovideroutputsource modesetting NVIDIA-0 
 exec xrandr --auto
-exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 1
+exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 0
 
 set $mod Mod4
 set $alt Mod1
@@ -19,8 +19,10 @@ set_from_resource $color8 i3wm.color8 "#d4d0cb"
 #font pango:monospace 12
 
 font pango:JetBrainsMono, monospace 12
-gaps outer 14
-gaps inner 10
+gaps outer 6
+gaps inner 6
+gaps bottom 60
+gaps top 16
 new_window pixel 2
 
 ######### COLORS ##########
@@ -114,7 +116,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+v restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 bindsym $mod+shift+9 exec betterlockscreen -l dim
 
 mode "resize" {
@@ -161,17 +162,16 @@ for_window [class = "Pcmanfm"] floating enable
 for_window [class = "vlc"] floating enable
 for_window [class = "Nvidia-settings"] floating enable
 
-
-# bindsym $mod+x [class="discord"] focus
-
 ###### STARTUP ######
 # exec_always --no-startup-id ~/.screenlayout/mon.sh
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always feh --bg-fill ~/Pictures/pexels-tom-swinnen-946344.jpg
-exec --no-startup-id betterlockscreen -w dim
+exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id feh --bg-scale --randomize ~/Nord-Wallpapers/wallpapers/
+exec --no-startup-id betterlockscreen -u ~/Nord-Wallpapers/wallpapers/
+exec --no-startup-id picom -b
+# exec --no-startup-id source ~/.fehbg
 
 # Scrolling for mouse
-exec xinput set-prop 14 'libinput Natural Scrolling Enabled' 0
+exec xinput set-prop 14 'libinput Natural Scrolling Enabled' 1
 
 # exec --no-startup-id discord
 # exec --no-startup-id qutebrowser
