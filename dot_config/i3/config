@@ -1,7 +1,7 @@
 # Nvidia prime stuff https://www.reddit.com/r/i3wm/comments/iisy2e/black_screen_after_installing_nvidia_driver/
 exec xrandr --setprovideroutputsource modesetting NVIDIA-0 
 exec xrandr --auto
-exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 0
+exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 4
 
 set $mod Mod4
 set $alt Mod1
@@ -83,7 +83,7 @@ bindsym $mod+q      exec rofi -show run
 
 # for running scripts
 bindsym $mod+Shift+q exec --no-startup-id "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $terminal
 
 bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
@@ -154,6 +154,7 @@ bindsym $mod+Shift+d mode "display"
 
 ##### WINDOWS ######
 assign [class = "firefox"] 2
+assign [class = "Chromium"] 3
 assign [class = "TelegramDesktop"] 4
 
 for_window [title = "Steam"] floating enable
@@ -168,6 +169,7 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-scale --randomize ~/Nord-Wallpapers/wallpapers/
 exec --no-startup-id betterlockscreen -u ~/Nord-Wallpapers/wallpapers/
 exec --no-startup-id picom -b
+exec $terminal
 # exec --no-startup-id source ~/.fehbg
 
 # Scrolling for mouse

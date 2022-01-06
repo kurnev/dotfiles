@@ -1,6 +1,7 @@
 lvim.format_on_save = true
 lvim.lint_on_save = true
 vim.opt.relativenumber = true
+lvim.transparent_window = true
 
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -20,6 +21,8 @@ lvim.builtin.nvimtree.update_to_buf_dir = {
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
+lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
 lvim.lsp.override = { "rust" }
 lvim.lsp.set_log_level = "debug"
