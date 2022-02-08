@@ -17,6 +17,7 @@ lvim.builtin.nvimtree.update_to_buf_dir = {
 	enable = false,
 	auto_open = false,
 }
+-- lvim.builtin.lualine.options.theme = "nord"
 
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -25,7 +26,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
 lvim.lsp.override = { "rust" }
-lvim.lsp.set_log_level = "debug"
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
@@ -34,6 +34,7 @@ formatters.setup({
 	},
 })
 
+lvim.builtin.dap.active = true
 lvim.plugins = {
 	{
 		"simrat39/rust-tools.nvim",

@@ -61,7 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3 
 modules-center = 
-modules-right = wifi cpu memory tray battery pulseaudio xkeyboard date
+modules-right = vpn wifi cpu memory tray battery pulseaudio xkeyboard date
 
 tray-position = 
 tray-padding = 2
@@ -274,6 +274,19 @@ format-disconnected-underline = ${colors.menucol-yellow}
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/vpn]
+type = internal/network
+interface = ppp0
+interval = 3.0
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-padding = 2
+label-connected = %local_ip%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %local_ip%
 
 [module/eth]
 type = internal/network

@@ -5,7 +5,7 @@ killall -q polybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
-for m in $(polybar --list-monitors | cut -d":" -f1); do
+for m in $(polybar --list-all-monitors | cut -d":" -f1); do
     MONITOR=$m polybar --reload example >>/tmp/polybar.log 2>&1 &
 done
 
