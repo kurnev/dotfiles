@@ -9,7 +9,7 @@ lvim.keys.normal_mode["<Tab>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<S-Tab>"] = ":bprev<cr>"
 lvim.keys.normal_mode["<Leader>x"] = ":NvimTreeFocus<cr>"
 
-lvim.builtin.dashboard.active = true
+-- lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.nvimtree.show_icons.git = 0
@@ -31,6 +31,26 @@ formatters.setup({
 	{
 		exe = "stylua",
 		filetypes = { "lua" },
+	},
+	{ exe = "black" },
+	{
+		exe = "prettier",
+		args = { "--print-width", "100" },
+		filetypes = { "typescript", "typescriptreact" },
+	},
+})
+
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	{
+		exe = "eslint",
+		filetypes = {
+			"javascriptreact",
+			"javascript",
+			"typescriptreact",
+			"typescript",
+			"vue",
+		},
 	},
 })
 
