@@ -10,9 +10,11 @@ lvim.keys.normal_mode["<S-Tab>"] = ":bprev<cr>"
 lvim.keys.normal_mode["<Leader>x"] = ":NvimTreeFocus<cr>"
 
 -- lvim.builtin.dashboard.active = true
+-- lvim.builtin.dap.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.notify.active = true
 lvim.builtin.nvimtree.setup.view.width = 40
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.setup.show_icons.git = 0
 lvim.builtin.nvimtree.update_to_buf_dir = {
 	enable = false,
 	auto_open = false,
@@ -22,10 +24,9 @@ lvim.builtin.nvimtree.update_to_buf_dir = {
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
-lvim.lsp.override = { "rust" }
+lvim.lsp.automatic_configuration.skipped_servers = { "rust_analyzer" }
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
@@ -54,7 +55,6 @@ linters.setup({
 	},
 })
 
-lvim.builtin.dap.active = true
 lvim.plugins = {
 	{
 		"simrat39/rust-tools.nvim",
